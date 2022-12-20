@@ -1,14 +1,13 @@
 from django.contrib.auth.models import AbstractUser
+from wapl.utils.models import BaseModel
 from django.db.models import CharField
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
 
-class User(AbstractUser):
+class User(BaseModel, AbstractUser):
     """
     Default custom user model for WiFi access point location.
-    If adding fields that need to be filled at user signup,
-    check forms.SignupForm and forms.SocialSignupForms accordingly.
     """
 
     #: First and last name do not cover name patterns around the globe
