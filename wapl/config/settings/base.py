@@ -326,3 +326,5 @@ SPECTACULAR_SETTINGS = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+ORIGIN_DATA_URL = env("ORIGIN_DATA_URL")

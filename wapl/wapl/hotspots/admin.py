@@ -18,7 +18,8 @@ class HotspotAdmin(admin.ModelAdmin):
         'lat',
         'long',
         'address',
-        'mayoralty'
+        'mayoralty',
+        'modified'
     )
     search_fields = ('name',)
     list_filter = ('program', 'mayoralty')

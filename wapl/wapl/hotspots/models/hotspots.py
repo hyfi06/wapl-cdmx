@@ -42,14 +42,11 @@ class Hotspot(BaseModel):
     address = models.CharField(
         verbose_name=_("Address"),
         max_length=100,
-        null=True,
-        blank=False,
     )
 
     mayoralty = models.CharField(
         verbose_name=_("Mayoralty"),
         max_length=100,
-        blank=False
     )
 
     def __str__(self) -> str:
