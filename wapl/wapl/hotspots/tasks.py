@@ -21,7 +21,7 @@ import csv
 def setup_hotspot_periodic_task(sender, **kwargs):
     # pass
     sender.add_periodic_task(
-        crontab(minute="*/10"),
+        crontab(hour="*/6"),
         get_hotspots.s(),
     )
 

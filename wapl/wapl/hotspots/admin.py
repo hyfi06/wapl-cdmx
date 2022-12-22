@@ -21,5 +21,6 @@ class HotspotAdmin(admin.ModelAdmin):
         'mayoralty',
         'modified'
     )
+
     search_fields = ('name',)
     list_filter = ('program', 'mayoralty')

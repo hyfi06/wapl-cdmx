@@ -12,3 +12,6 @@ REDIS_URL=redis://redis:6379/0
 # Flower
 CELERY_FLOWER_USER=cibpZLqgHdbMAsrWhvsOyjDsvGzxnnjA
 CELERY_FLOWER_PASSWORD=wIP3GWfCahXgyL0ONkPS3Bsymx9sCAqVuAhykkZjOulBpai30wnHc7BVr9FN20Xc
+
+# wapl
+ORIGIN_DATA_URL=https://datos.cdmx.gob.mx/dataset/puntos-de-acceso-wifi-en-la-ciudad-de-mexico
