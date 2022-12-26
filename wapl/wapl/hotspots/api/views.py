@@ -4,11 +4,8 @@ from django.db.models import F
 from django.db.models.functions import Power
 
 # drf
-from rest_framework import status
-from rest_framework.decorators import action
-from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, UpdateModelMixin
-from rest_framework.response import Response
 from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.filters import SearchFilter
 
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -22,7 +19,8 @@ class HotspotViewSet(ReadOnlyModelViewSet):
     serializer_class = HotspotSerializer
     queryset = Hotspot.objects.all()
     lookup_field = "name"
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = [SearchFilter, DjangoFilterBackend]
+    search_fields = ['name', 'address']
     filterset_fields = ['name', 'address', 'program']
 
     def get_queryset(self, *args, **kwargs):
