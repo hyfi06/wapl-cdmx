@@ -15,7 +15,7 @@ from wapl.hotspots.models import Hotspot
 from .serializers import HotspotSerializer
 
 
-class HotspotViewSet(ReadOnlyModelViewSet):
+class HotspotsViewSet(ReadOnlyModelViewSet):
     serializer_class = HotspotSerializer
     queryset = Hotspot.objects.all()
     lookup_field = "name"
