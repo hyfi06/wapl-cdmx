@@ -1,3 +1,4 @@
+"""Hotspots serializers"""
 
 # drf
 from rest_framework import serializers
@@ -7,6 +8,7 @@ from wapl.hotspots.models import Hotspot
 
 
 class HotspotSerializer(serializers.ModelSerializer):
+    """This serializer manges Hotspot model."""
     class Meta:
         model = Hotspot
         fields = [

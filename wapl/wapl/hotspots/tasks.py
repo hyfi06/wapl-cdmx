@@ -1,4 +1,4 @@
-"""Hotspot Celery tasks."""
+"""Hotspots Celery tasks."""
 
 # Django
 
@@ -19,7 +19,7 @@ import csv
 
 @celery_app.on_after_finalize.connect
 def setup_hotspot_periodic_task(sender, **kwargs):
-    # pass
+    """Add the periodic task"""
     sender.add_periodic_task(
         crontab(hour="*/6"),
         get_hotspots.s(),
@@ -28,6 +28,13 @@ def setup_hotspot_periodic_task(sender, **kwargs):
 
 @celery_app.task(soft_time_limit=7*60)
 def get_hotspots():
+    """This function get the url of csv from Portal de datos abiertos de la CDMX
+    Steps:
+        1. Get download csv url by XPath
+        2. Get csv and save in temp file, this file will be remove at finish the process
+        3. Open csv as Dict.
+        4. Update or create hotspots by csv data using the Hotspot model and Django ORM.
+    """
     XPATH_DOWNLOAD_CSV_URL = '//section[@id="dataset-resources"]//div/a[last()]/@href'
 
     response = requests.get(ORIGIN_DATA_URL)
