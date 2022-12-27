@@ -1,0 +1,1 @@
+from .hotspots import Hotspot
