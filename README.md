@@ -8,13 +8,32 @@ API Rest of WiFi access points location in the CDMX
 ## Architecture
 ![Architecture diagram](diagram.svg)
 
-## Run development
+
+## Endpoints
+
+
+
+## Development
+
+### First step
+
+Build docker images:
 
 ```bash
 cd wapl
 docker-compose -f local.yml build
-docker-compose -f local.yml run --rm django python manage.py createsuperuser
+```
+
+Up all servicies
+
+```bash
 docker-compose -f local.yml up
+```
+
+Create super user
+
+```bash
+docker-compose -f local.yml run --rm django python manage.py createsuperuser
 ```
 
 ## License
